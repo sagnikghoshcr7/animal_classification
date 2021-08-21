@@ -1,5 +1,5 @@
-0 Elephant
-1 Kangaroo
-2 Panda
-3 Penguin
-4 Tiger
+Elephant
+Kangaroo
+Panda
+Penguin
+Tiger

@@ -34,7 +34,8 @@ class _HomeState extends State<Home> {
     //this function runs the model on the image
     var output = await Tflite.runModelOnImage(
       path: image.path,
-      numResults: 36, //the amout of categories our neural network can predict
+      numResults:
+          5, //the amout of categories our neural network can predict (here no. of animals)
       threshold: 0.5,
       imageMean: 127.5,
       imageStd: 127.5,
@@ -79,25 +80,25 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.indigo,
+        centerTitle: true,
         title: Text(
           'Animal Classification',
           style: TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.w200,
-            fontSize: 20,
-            letterSpacing: 0.8,
+            fontWeight: FontWeight.w500,
+            fontSize: 23,
           ),
         ),
       ),
       body: Container(
-        color: Colors.black.withOpacity(0.9),
+        color: Color.fromRGBO(68, 190, 255, 0.8),
         padding: EdgeInsets.symmetric(horizontal: 35, vertical: 50),
         child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(30),
           decoration: BoxDecoration(
-            color: Color(0xFF2A363B),
+            color: Colors.indigo,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Column(
@@ -128,11 +129,12 @@ class _HomeState extends State<Home> {
                               // ignore: unnecessary_null_comparison
                               _output != null
                                   ? Text(
-                                      'The object is: ${_output[0]['label']}!',
+                                      'The animal is: ${_output[0]['label']}',
                                       style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400),
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                      ),
                                     )
                                   : Container(),
                               Divider(
@@ -155,8 +157,9 @@ class _HomeState extends State<Home> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 24, vertical: 17),
                         decoration: BoxDecoration(
-                            color: Colors.blueGrey[600],
-                            borderRadius: BorderRadius.circular(15)),
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                         child: Text(
                           'Take A Photo',
                           style: TextStyle(color: Colors.white, fontSize: 16),
@@ -172,7 +175,7 @@ class _HomeState extends State<Home> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 24, vertical: 17),
                         decoration: BoxDecoration(
-                          color: Colors.blueGrey[600],
+                          color: Colors.blue,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Text(
