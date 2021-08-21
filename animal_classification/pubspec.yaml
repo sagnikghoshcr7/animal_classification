@@ -14,10 +14,33 @@ dependencies:
 
   cupertino_icons: ^1.0.2
 
+  # Main packages for our app
+  tflite: ^1.1.2
+  image_picker: ^0.8.3+2
+
+  # For app logo and Splash Screen
+  flutter_launcher_icons: ^0.9.1
+  flutter_native_splash: ^1.2.1
+
+flutter_native_splash:
+  color: "#E0F3FD"
+  image: assets/icons/logo.png
+  android: true
+  ios: true
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/logo.png"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/
